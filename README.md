@@ -1,67 +1,100 @@
-# CyberSapient Dashboard
+# Dashboard
 
-A modern dashboard application built with Next.js, featuring widget-based analytics and user authentication.
+A dashboard built with Next.js and TypeScript.
 
-## Prerequisites
+## Setup Instructions
 
-- Node.js 18.x or higher
-- npm package manager
-- A Clerk account for authentication
-
-## Setup
-
-1. Clone the repository:
+1. **Environment Setup**
 ```bash
+# Clone the repository
 git clone <repository-url>
-cd cst-dashboard
-```
+cd dashboard
 
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
 
-```
-
-3. Set up environment variables:
-Create a `.env.local` file in the root directory with:
-```env
-DATABASE_URL=database_url
+# Configure environment variables
+# Create .env file and add required variables:
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
 CLERK_SECRET_KEY=your_clerk_secret_key
+DATABASE_URL=your_database_connection_string
 ```
 
-## Available Commands
-
+2. **Database Setup**
 ```bash
-# Development server    
-npm run dev       # Start development server
-
-# Production build
-npm run build    # Create production build
-
-# Start production server
-npm start        # Run production server
-
-# Database commands
-npm run db:push  # Push database changes
-
-npm run db:studio # Open Drizzle Studio
+# Initialize database
+npm run db:generate
+npm run db:migrate
 ```
 
+3. **Start Development**
+```bash
+npm run dev
+```
 
-## Features
+<!-- ## Technology Choices & Rationale -->
 
-- 🔐 Authentication with Clerk
-- 📊 Customizable widgets
-- 🎨 Tailwind CSS styling
-- 🗃️ Database integration
-- 📱 Responsive design
+### Core Technologies
+- **Next.js 14 (App Router)**
+  - Server-side rendering capabilities
+  - Efficient routing and data fetching
+  - Built-in performance optimizations
 
-## Development
+- **TypeScript**
+  - Type safety and better developer experience
+  - Enhanced code maintainability
+  - Better IDE support
 
-The application uses:
-- Next.js 14 with App Router
-- Clerk for authentication
-- Tailwind CSS for styling
-- Drizzle ORM for database operations
+- **Clerk Authentication**
+  - Comprehensive auth solution
+  - Built-in user management
+  - Easy integration with Next.js
+
+- **Drizzle ORM**
+  - Type-safe database operations
+  - Better performance compared to Prisma
+  - Simpler migration handling
+
+### UI & Styling
+- **Tailwind CSS**
+- **Shadcn/ui**
+
+## Project Structure
+```
+dashboard/
+├── src/
+│   ├── app/                 # Next.js app router pages
+│   │   ├── api/            # API routes
+│   │   └── _components/    # Page-specific components
+│   ├── components/         # Shared components
+│   ├── context/           # React context providers
+│   ├── lib/               # Utility functions
+│   ├── config/            # Configuration files
+│   └── db/                # Database schema & config
+├── public/                # Static assets
+└── types/                # TypeScript type definitions
+```
+
+## Architecture
+
+1. **Widget-based Architecture**
+   - Modular widget system for extensibility
+   - Dynamic widget loading
+   - Configurable layouts
+
+2. **State Management**
+   - React Context for global state
+   - Server components for data fetching
+   - Optimistic updates for better UX
+
+3. **Database Design**
+   - Normalized schema design
+   - Type-safe database access
+
+## Development Commands
+```bash
+npm run dev          # Start development server
+npm run build        # Create production build
+npm run db:studio    # Open database GUI
+```
 
