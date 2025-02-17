@@ -1,8 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Activity, DollarSign, UserRoundPlus, Users, X } from 'lucide-react'
 import React from 'react'
-import Cardo, { ICardo } from './Card'
-import { date } from 'drizzle-orm/mysql-core'
+import Cardo  from './Card'
+import { ICardo } from '@/types/types'
 
 const cardsData: ICardo[] = [
     {

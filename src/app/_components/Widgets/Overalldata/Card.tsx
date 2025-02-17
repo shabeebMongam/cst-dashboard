@@ -1,12 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { ICardo } from '@/types/types'
 
-import React, { ReactElement } from 'react'
+import React from 'react'
 
-export interface ICardo {
-    label: string,
-    data: number,
-    icon: ReactElement
-}
+
 
 
 const Cardo: React.FC<ICardo> = ({ label, data, icon }) => {

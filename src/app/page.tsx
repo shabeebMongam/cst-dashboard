@@ -18,7 +18,6 @@ export default function Home() {
           <h1>Welcome to dashboard</h1>
         </div>
       </SignedOut>
-      {/* <SignedIn> */}
       <section className="mx-5 ">
         <div className="h-[60px]"></div>
         <div className="border w-full rounded-md p-3">
@@ -26,7 +25,6 @@ export default function Home() {
             <div className="animate-pulse h-32 bg-gray-100 rounded-md" />
           ) : error ? (
             <div className="text-red-500 text-center">
-              {/* {error} */}
               </div>
           ) : widgets.length > 0 ? (
             widgets.map((widget) => (
@@ -41,7 +39,6 @@ export default function Home() {
           )}
         </div>
       </section>
-      {/* </SignedIn> */}
     </div>
   )
 

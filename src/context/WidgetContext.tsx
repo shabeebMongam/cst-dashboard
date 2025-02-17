@@ -91,7 +91,6 @@ export function WidgetProvider({ children }: { children: ReactNode }) {
 
     useEffect(() => {
         if (isLoaded && user) {
-            // setTimeout(() => fetchUserWidgets(), 5000)
             fetchUserWidgets()
         }
     }, [isLoaded, user]);
